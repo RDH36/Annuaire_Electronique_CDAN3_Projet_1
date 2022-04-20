@@ -1,0 +1,25 @@
+.backgroud{
+    -fx-background-color: #ebebe0;
+}
+.styleTextfield:focused{
+    -fx-border-width: 0;
+    -fx-background-color: blue, white;
+    -fx-background-insets: 0, 0 0 1 0; 
+}
+
+.styleTextfield{
+    -fx-background-color: gray, white;
+    -fx-background-insets: 0, 0 0 1 0; 
+    -fx-border-radius: 2;
+    -fx-border-style: none;
+}
+.containerMenu {
+    -fx-border-color: gray;
+    -fx-border-radius: 3;
+    -fx-background-color: #ebebe0;
+}
+
+.containerTableau {
+    -fx-border-color: gray;
+    -fx-border-radius: 3;
+}

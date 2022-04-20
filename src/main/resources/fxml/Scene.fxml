@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="790.0" prefWidth="1624.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cdan003.annuaireelectronique.FXMLController">
+    <children>
+      <Pane layoutX="14.0" layoutY="9.0" prefHeight="780.0" prefWidth="356.0" style="-fx-background-color: white;" styleClass="containerMenu" stylesheets="@../styles/Style.css">
+         <children>
+            <VBox layoutX="14.0" layoutY="97.0" prefHeight="426.0" prefWidth="325.0" spacing="2.0">
+               <children>
+                  <TextField fx:id="tfNom" focusTraversable="false" onKeyReleased="#verificationNom" prefHeight="45.0" prefWidth="380.0" promptText="Nom" styleClass="styleTextfield" stylesheets="@../styles/Style.css">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Georgia" size="15.0" />
+                     </font></TextField>
+                  <Label fx:id="labelNomInfo" alignment="TOP_RIGHT" focusTraversable="false" prefHeight="21.0" prefWidth="328.0">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfPrenom" focusTraversable="false" onKeyReleased="#verificationPrenom" prefHeight="45.0" prefWidth="380.0" promptText="Prénom(s)" styleClass="styleTextfield" stylesheets="@../styles/Style.css">
+                     <font>
+                        <Font name="Georgia" size="15.0" />
+                     </font></TextField>
+                  <Label fx:id="labelPrenomInfo" alignment="TOP_RIGHT" focusTraversable="false" prefHeight="21.0" prefWidth="342.0">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font></Label>
+                  <ComboBox fx:id="comboBoxGenre" focusTraversable="false" onMouseClicked="#afficheGenre" prefHeight="31.0" prefWidth="326.0" promptText="Genre" styleClass="styleTextfield" stylesheets="@../styles/Style.css" visibleRowCount="2" />
+                  <Label fx:id="labelGenreInfo" alignment="TOP_RIGHT" focusTraversable="false" prefHeight="21.0" prefWidth="387.0">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="tfRegroupement" focusTraversable="false" onKeyReleased="#verificationRgp" prefHeight="45.0" prefWidth="380.0" promptText="Regroupement formations ou établissements" styleClass="styleTextfield" stylesheets="@../styles/Style.css">
+                     <font>
+                        <Font name="Georgia" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="labelRgpInfo" alignment="TOP_RIGHT" focusTraversable="false" prefHeight="21.0" prefWidth="332.0">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font></Label>
+                  <ComboBox fx:id="comboBoxSecteur" focusTraversable="false" onMouseClicked="#afficheCBSecteur" prefHeight="33.0" prefWidth="332.0" promptText="Secteur" styleClass="styleTextfield" stylesheets="@../styles/Style.css" visibleRowCount="5" />
+                  <Label fx:id="labelSecteurInfo" alignment="TOP_RIGHT" focusTraversable="false" prefHeight="21.0" prefWidth="334.0">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="tfLocalisation" focusTraversable="false" onKeyReleased="#verificationLocalisation" prefHeight="45.0" prefWidth="380.0" promptText="Localisation" styleClass="styleTextfield" stylesheets="@../styles/Style.css">
+                     <font>
+                        <Font name="Georgia" size="15.0" />
+                     </font></TextField>
+                  <Label fx:id="labelLocalisationInfo" alignment="TOP_RIGHT" focusTraversable="false" prefHeight="21.0" prefWidth="367.0">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="tfanneUni" focusTraversable="false" onKeyReleased="#verificationanneUni" prefHeight="45.0" prefWidth="380.0" promptText="Année Universitaire" styleClass="styleTextfield" stylesheets="@../styles/Style.css">
+                     <font>
+                        <Font name="Georgia" size="15.0" />
+                     </font></TextField>
+                  <Label fx:id="labelAnneUnivInfo" alignment="TOP_RIGHT" focusTraversable="false" prefHeight="21.0" prefWidth="344.0">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+            <HBox layoutX="20.0" layoutY="562.0" prefHeight="31.0" prefWidth="314.0" spacing="14.0">
+               <children>
+                  <Button fx:id="btnAjout" focusTraversable="false" mnemonicParsing="false" onAction="#actionAjout" prefHeight="35.0" prefWidth="95.0" text="Ajouter">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../images/icons8-add-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnModifier" focusTraversable="false" mnemonicParsing="false" onAction="#actionModifier" prefHeight="35.0" prefWidth="95.0" text="Modifier">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../images/pencil.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnAnnuler" focusTraversable="false" mnemonicParsing="false" onAction="#actionAnnuler" prefHeight="35.0" prefWidth="95.0" text="Annuler">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../images/cancel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="14.0" layoutY="32.0" prefHeight="45.0" prefWidth="325.0" spacing="20.0">
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/book-open-blank-variant.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="48.0" prefWidth="275.0" text="Annuaire Electronique">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label layoutX="52.0" layoutY="747.0" prefHeight="21.0" prefWidth="268.0" text="Annuaire CDAN003 Projet 1 Groupe 2">
+               <font>
+                  <Font name="Times New Roman Italic" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="48.0" fitWidth="118.0" layoutX="87.0" layoutY="699.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Logo%20Inclusiv%20Academy.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelWarnig" layoutX="20.0" layoutY="523.0" prefHeight="25.0" prefWidth="318.0">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="377.0" layoutY="7.0" prefHeight="780.0" prefWidth="1220.0" styleClass="containerTableau" stylesheets="@Style.css">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="679.0" prefWidth="1249.0" text="Annuaire Electronique" textFill="#00000042">
+               <font>
+                  <Font name="Lucida Handwriting Italic" size="50.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnQuitter" focusTraversable="false" layoutX="1104.0" layoutY="733.0" mnemonicParsing="false" onAction="#actionquitter" prefHeight="31.0" prefWidth="101.0" text="Quitter">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/exit-to-app%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSupprimer" focusTraversable="false" layoutX="5.0" layoutY="735.0" mnemonicParsing="false" onAction="#actionSupprimer" prefHeight="31.0" prefWidth="118.0" text="Supprimer">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Accordion focusTraversable="false">
+              <panes>
+                <TitledPane focusTraversable="false" prefHeight="682.0" prefWidth="1084.0" text="Registre">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="1218.0">
+                           <children>
+                              <VBox prefHeight="652.0" prefWidth="1218.0" spacing="15.0">
+                                 <children>
+                                    <TextField fx:id="tfRechercher" focusTraversable="false" onKeyReleased="#ActionRechercher" prefHeight="29.0" prefWidth="1196.0" promptText="Recherche">
+                                       <font>
+                                          <Font name="Georgia" size="15.0" />
+                                       </font>
+                                    </TextField>
+                                    <TableView fx:id="tvListe" cache="true" focusTraversable="false" onMouseClicked="#afficherSelection" prefHeight="545.0" prefWidth="1218.0">
+                                      <columns>
+                                        <TableColumn fx:id="colNom" prefWidth="148.00003051757812" text="Nom" />
+                                        <TableColumn fx:id="colPrenom" prefWidth="155.99996948242188" text="Prénom(s)" />
+                                          <TableColumn fx:id="colGenre" minWidth="0.0" prefWidth="123.3333740234375" text="Genre" />
+                                          <TableColumn fx:id="Colregroupement" prefWidth="325.6666259765625" text="RGP formations ou établissements" />
+                                          <TableColumn fx:id="colSecteur" prefWidth="108.00006103515625" text="Secteur" />
+                                          <TableColumn fx:id="colLocalisation" minWidth="0.0" prefWidth="183.0" text="Localisation" />
+                                          <TableColumn fx:id="colAnneUniv" prefWidth="180.0" text="Année Universitaire" />
+                                          <TableColumn fx:id="colId" editable="false" prefWidth="75.0" text="id" visible="false" />
+                                      </columns>
+                                    </TableView>
+                                    <Label fx:id="labelStats" alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="1218.0" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane focusTraversable="false" text="Statistique">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="1218.0">
+                           <children>
+                              <PieChart fx:id="pichart" clockwise="false" labelsVisible="false" layoutX="-4.0" layoutY="-5.0" prefHeight="605.0" prefWidth="1224.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
